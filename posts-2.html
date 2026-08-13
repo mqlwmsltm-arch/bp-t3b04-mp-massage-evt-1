@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/3) · t3b04-mp-massage-evt-1</title>
+  <meta name="description" content="t3b04-mp-massage-evt-1에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://t3b04-mp-massage-evt-1.maphoshirts.com/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ :root {
+ --bg-color: #121212;
+ --obsidian-dark: #1a1a1a;
+ --gold-primary: #d4af37;
+ --gold-gradient: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+ --text-color: #e5e5e5;
+ --title-color: #ffffff;
+ --border-color: #333333;
+ }
+ body {
+ background-color: var(--bg-color);
+ color: var(--text-color);
+ font-family: 'Georgia', serif, 'Segoe UI', Arial;
+ margin: 0;
+ padding: 0;
+ line-height: 1.8;
+ }
+ header {
+ border-bottom: 2px solid var(--gold-primary);
+ padding: 50px 20px;
+ text-align: center;
+ background-color: var(--obsidian-dark);
+ box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
+ }
+ header h1 {
+ color: var(--title-color);
+ font-size: 2.8rem;
+ margin: 0;
+ background: var(--gold-gradient);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+ letter-spacing: 2px;
+ }
+ header p {
+ font-size: 1.1rem;
+ color: var(--gold-primary);
+ margin: 10px 0 0 0;
+ text-transform: uppercase;
+ letter-spacing: 4px;
+ }
+ .container {
+ max-width: 950px;
+ margin: 40px auto;
+ padding: 0 20px;
+ }
+ .intro-box {
+ background-color: var(--obsidian-dark);
+ border: 1px solid var(--border-color);
+ border-radius: 8px;
+ padding: 30px;
+ margin-bottom: 40px;
+ box-shadow: 0 0 15px rgba(0,0,0,0.5);
+ }
+ .intro-box h2 {
+ color: var(--gold-primary);
+ margin-top: 0;
+ font-size: 1.8rem;
+ border-bottom: 1px solid var(--gold-primary);
+ padding-bottom: 10px;
+ }
+ .spec-table {
+ width: 100%;
+ border-collapse: collapse;
+ margin: 25px 0;
+ background-color: #121212;
+ }
+ .spec-table th, .spec-table td {
+ border: 1px solid var(--border-color);
+ padding: 12px;
+ text-align: left;
+ }
+ .spec-table th {
+ background-color: rgba(212, 175, 55, 0.1);
+ color: var(--gold-primary);
+ }
+ .spec-table td {
+ color: #fff;
+ }
+ .post-list {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 20px;
+ margin-bottom: 40px;
+ }
+ @media(max-width: 768px) {
+ .post-list {
+ grid-template-columns: 1fr;
+ }
+ }
+ .post-card {
+ background-color: var(--obsidian-dark);
+ border: 1px solid var(--border-color);
+ border-radius: 8px;
+ padding: 20px;
+ transition: all 0.3s ease;
+ }
+ .post-card:hover {
+ border-color: var(--gold-primary);
+ box-shadow: 0 5px 15px rgba(212, 175, 55, 0.15);
+ transform: translateY(-4px);
+ }
+ .post-card h3 {
+ margin-top: 0;
+ color: var(--title-color);
+ }
+ .post-card h3 a {
+ color: var(--title-color);
+ text-decoration: none;
+ transition: color 0.3s;
+ }
+ .post-card h3 a:hover {
+ color: var(--gold-primary);
+ }
+ .post-card p {
+ font-size: 0.9rem;
+ color: #a0a0a0;
+ }
+ .story-section {
+ background-color: rgba(26, 26, 26, 0.9);
+ border-left: 5px solid var(--gold-primary);
+ padding: 30px;
+ margin-bottom: 40px;
+ border-radius: 0 8px 8px 0;
+ border: 1px solid var(--border-color);
+ }
+ .story-section h2 {
+ color: var(--gold-primary);
+ margin-top: 0;
+ }
+ .review-section {
+ margin-bottom: 40px;
+ }
+ .review-section h2 {
+ color: var(--gold-primary);
+ border-bottom: 1px solid var(--border-color);
+ padding-bottom: 10px;
+ }
+ .review-card {
+ background-color: var(--obsidian-dark);
+ border-radius: 8px;
+ padding: 20px;
+ margin-bottom: 20px;
+ border-right: 4px solid var(--gold-primary);
+ border: 1px solid var(--border-color);
+ }
+ .review-card .meta {
+ font-size: 0.85rem;
+ color: var(--gold-primary);
+ margin-bottom: 10px;
+ font-weight: bold;
+ }
+ .review-card p {
+ margin: 0;
+ font-style: italic;
+ }
+ .cta-section {
+ border: 1px solid var(--gold-primary);
+ background: radial-gradient(circle, var(--obsidian-dark) 0%, #000 100%);
+ border-radius: 8px;
+ padding: 35px;
+ text-align: center;
+ box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+ }
+ .cta-section h2 {
+ margin-top: 0;
+ color: var(--gold-primary);
+ font-size: 2rem;
+ }
+ .cta-section p {
+ color: #ccc;
+ }
+ .btn-call {
+ display: inline-block;
+ background: var(--gold-gradient);
+ color: #121212;
+ padding: 15px 35px;
+ font-size: 1.2rem;
+ font-weight: bold;
+ text-decoration: none;
+ border-radius: 4px;
+ margin-top: 20px;
+ transition: all 0.3s;
+ box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+ }
+ .btn-call:hover {
+ color: #fff;
+ box-shadow: 0 0 20px rgba(212, 175, 55, 0.6), 0 0 40px #fff;
+ transform: scale(1.05);
+ }
+ footer {
+ text-align: center;
+ padding: 40px 20px;
+ border-top: 1px solid var(--border-color);
+ color: #555555;
+ font-size: 0.85rem;
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (2/3) · t3b04-mp-massage-evt-1">
+  <meta property="og:description" content="t3b04-mp-massage-evt-1에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://t3b04-mp-massage-evt-1.maphoshirts.com/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <h1>MP LUXURY OBSIDIAN</h1>
+ <p>Premium Healing & Massage Campaign Database</p>
+</header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 45개 · 2/3 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0023.html">마포 마사지 이벤트 예약 주의사항과 마포 홍대 로컬 럭셔리 밤문화 가이드 활용법</a>
+        <p class="post-item__summary">마포 마사지 이벤트 정보를 찾는 많은 분들이 예약 단계에서 실패를 경험하곤 합니다. 가장 흔한 실패 지점은 확인되지 않은 경로를 통해 무리하게 예약을 진행하려는 시도입니다. 정확한 정보 제공 없이 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0024.html">마포 마사지 이벤트 찾을 때 반드시 확인해야 할 셔츠룸 사이트 체크리스트</a>
+        <p class="post-item__summary">마포 마사지 이벤트와 함께 저녁 시간을 알차게 보내기 위해 검색을 하시는 분들이 많습니다. 다양한 선택지 중에서 믿을 수 있는 정보를 얻기 위해서는 접근성과 위치를 꼼꼼히 따져봐야 합니다. 최근 주</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0025.html">마포 마사지 이벤트 활용한 검색 엔진 광회선 대역폭 최적화 기술</a>
+        <p class="post-item__summary">최근 마포 마사지 이벤트 정보를 검색 엔진에 등록하려 시도하는 과정에서 데이터 처리량의 병목 현상을 겪는 사례가 늘고 있습니다. 웹사이트의 콘텐츠가 아무리 훌륭해도 검색 로봇이 접근하는 통로가 좁다</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0342.html">마포 마사지 이벤트 비교와 함께 보는 마곡 유흥 추천정보 가격 기준</a>
+        <p class="post-item__summary">마포 마사지 이벤트 등 다양한 지역 정보를 찾다가 마곡 지역의 유흥 문화를 살펴보는 분들이 늘고 있습니다. 유흥 시설을 선택할 때는 가격대의 적정성을 판단하는 것이 무엇보다 중요하며 이는 서비스 질</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0343.html">마포 마사지 이벤트 탐색자가 실수하는 합정 노래방 추천정보 예약법</a>
+        <p class="post-item__summary">마포 마사지 이벤트와 같은 여가 정보를 찾던 분들이 종종 합정 인근의 노래방을 예약할 때 흔히 하는 실수가 있습니다. 바로 업체의 예약 절차를 간과하고 즉흥적으로 방문하는 것입니다. 이는 주말이나 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0344.html">마포 마사지 이벤트 즐기는 이들이 확인하는 연남 클럽 추천정보 리스트</a>
+        <p class="post-item__summary">마포 마사지 이벤트로 일상의 피로를 풀고 난 후 연남 지역의 역동적인 클럽 문화를 즐기려는 사람들이 많습니다. 하지만 무작정 방문하기보다는 지역 특성을 반영한 체크리스트를 활용해 보는 것을 추천합니</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0345.html">마포 마사지 이벤트 활용법과 합정 셔츠룸 추천정보 정리</a>
+        <p class="post-item__summary">주말 저녁 번화가를 거닐다 보면 마포 마사지 이벤트 정보를 마주하게 되지만, 정작 기대했던 분위기와 다른 상황을 마주하는 경우가 종종 발생합니다. 익숙하지 않은 장소를 방문할 때는 무작정 매장에 들</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0346.html">마포 마사지 이벤트 속 오해와 공덕 가라오케 추천정보 활용</a>
+        <p class="post-item__summary">일부 방문객들은 마포 마사지 이벤트 정보가 곧 가라오케의 서비스 내용과 직결된다고 오해하곤 합니다. 하지만 두 업태는 운영 목적과 제공하는 서비스의 본질이 확연히 다르며 이를 혼동하면 낭패를 보기 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0347.html">마포 마사지 이벤트 조건과 상수 마사지 추천정보 비교 분석</a>
+        <p class="post-item__summary">진정한 휴식을 위해서는 마포 마사지 이벤트 혜택 외에도 업체의 숙련도, 청결도, 그리고 서비스 마인드라는 세 가지 충족 조건이 필요합니다. 많은 업체가 할인 행사를 진행하지만, 실질적인 만족도는 관</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0348.html">마포 마사지 이벤트 살펴보고 망원 노래방 추천정보 찾기</a>
+        <p class="post-item__summary">여러분은 평소 여가 시간을 보낼 때 어떤 기준을 가지고 장소를 선택하시나요? 마포 마사지 이벤트 광고가 넘쳐나는 요즘, 단순히 화려한 문구에 끌려 노래방을 결정하고 있지는 않은지 스스로 되돌아볼 필</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0349.html">마포 마사지 이벤트 활용 전 반드시 확인해야 할 홍대 노래방 추천정보</a>
+        <p class="post-item__summary">도심 속 힐링을 위해 마포 마사지 이벤트 정보를 찾던 이들이라면 저녁 시간의 여흥 또한 중요한 고려 사항일 것입니다. 특히 홍대 지역은 수많은 엔터테인먼트 시설이 밀집해 있어 선택에 신중을 기해야 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0350.html">마포 마사지 이벤트 비교 분석으로 본 공덕 셔츠룸 추천정보 선택 기준</a>
+        <p class="post-item__summary">일상의 피로를 푸는 마포 마사지 이벤트 참여를 계획하는 이들 사이에서 공덕 지역의 야간 문화에 대한 관심도 높아지고 있습니다. 서비스 업체를 선택할 때 가장 큰 고민은 역시 비용과 서비스의 질 사이</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0351.html">마포 마사지 이벤트 이용객이 흔히 겪는 연남 유흥 추천정보 예약 실패 사례</a>
+        <p class="post-item__summary">최근 마포 마사지 이벤트에 관심을 두는 소비자들이 저녁 시간에 연남동 인근의 유흥 문화를 즐기려 할 때 잦은 실패를 겪곤 합니다. 가장 흔한 실패 지점은 예약 절차를 간과하고 무작정 현장을 방문하는</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0352.html">마포 마사지 이벤트와 연계한 마곡 가라오케 추천정보 확인 항목 리스트</a>
+        <p class="post-item__summary">마포 마사지 이벤트 프로그램을 마친 후 이동 동선을 고려하여 마곡 지역의 가라오케를 찾는 이들이 늘고 있습니다. 성공적인 저녁 시간을 위해서는 업체의 위치와 접근성을 사전에 면밀히 체크하는 과정이 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/guide-003.html">마사지 입문자를 위한 내상 방지 및 나한테 딱 맞는 오일 초이스 가이드</a>
+        <p class="post-item__summary">어이 브로들! 태어나서 마사지 숍 한 번 안 가본 어리바리 겜돌이 브로들이 처음 아로마 테라피 받으러 갔다가 이상한 오일 잘못 발라서 피부 트러블 나고 돈만 날리는 내상 입을까 봐 걱정이지? 오늘 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/guide-004.html">파이트클럽 타일러 더든의 서브리미널 뇌 자극 원리와 림프 순환학</a>
+        <p class="post-item__summary">어이 브로, 형이다! 영화 '파이트클럽'을 보면 타일러 더든이 극장에서 영사기 필름 프레임 사이에 미세한 1프레임짜리 서브리미널 자극 컷을 끼워 넣어 관객들의 무의식을 강제로 흔들어 깨우는 흥미진진</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-1.html">마포 마사지 이벤트 정보 안내</a>
+        <p class="post-item__summary">마포 지역에서 진행되는 마사지 이벤트는 다양한 휴식과 회복의 기회를 제공합니다. 이벤트 내용을 파악하고 기록하는 방식에는 여러 가지가 있으며, 일관된 형식으로 정리하는 것이 장기적으로 유용합니다. </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-2.html">마포 마사지 이벤트 안내</a>
+        <p class="post-item__summary">마포 지역에서는 다양한 마사지 관련 이벤트가 진행되고 있습니다. 이러한 이벤트는 대부분 건강 관리와 체력 관리에 관심 있는 고객들을 위해 마련된 것으로, 특정 기간 동안 할인 혜택이나 추가 서비스 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-1.html">마포 마사지 이벤트 안내</a>
+        <p class="post-item__summary">마포 지역에서는 다양한 마사지 관련 이벤트가 진행되고 있으며, 이를 통해 보다 효과적으로 휴식과 체력 회복을 도모할 수 있습니다. 이벤트를 활용하면 정기적으로 마사지를 이용하는 데 있어 부담을 줄일</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-2.html">마포 마사지 이벤트 안내</a>
+        <p class="post-item__summary">마포 지역에서 진행 중인 마사지 이벤트는 다양한 혜택을 제공합니다. 많은 이용자들이 가격 비교를 중요하게 생각하며, 사전에 정보를 확인하여 방문하는 것이 좋습니다. 이벤트 기간 동안 특별한 할인 혜</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+      <a class="pager__link" href="posts-3.html">3</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
